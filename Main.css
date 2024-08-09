@@ -1,0 +1,52 @@
+ 
+#btn{
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    
+}
+#rock{
+    margin: 30px;
+    font-size: 30px;
+    border: solid green 1px;
+    border-radius: 17px;
+    color:rgb(80, 65, 65);
+    background-color: aquamarine;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#scissor{
+    margin: 30px;
+    font-size: 30px;
+    border: solid green 1px;
+    border-radius: 20px;
+    color:rgb(80, 65, 65);
+    background-color: aquamarine;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#paper{
+    margin: 30px;
+    font-size: 30px;
+    border: solid green 1px;
+    border-radius: 20px;
+    color:rgb(80, 65, 65);
+    background-color: aquamarine;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#container{
+    width: 140px;
+    height: 140px;
+    /* background-color:darkturquoise; */
+    font-style: monospace;
+    display: flex;
+
+    font-style: monospace;
+}
+#score{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,55 +1,134 @@
-console.log("Press \"q\" to quit game");
-let bool = false;
-let scoreComp = 0, scoreHuman=0;
-let a = confirm("play?");
-if(a ==true){
-    bool = true;
-}
+let hsc = document.querySelector("#hsc");
+let csc = document.querySelector("#csc");
+let dw = document.querySelector("#dw");
+// #container
+const h = document.createTextNode("Human Score: ");
+const c = document.createTextNode("Computer Score: ");
+let displayWinner = document.createTextNode("Winner is: ");
 
-while(bool){
+let humWin = document.createTextNode("Human");
+let compWin = document.createTextNode("Computer");
+
+let contentH = document.createElement("h5");
+let contentC = document.createElement("h5");
+let contentWinner = document.createElement("h4");
+// div
+contentH.classList.add("content");
     
-    let compThrows = function getComputerChoice(){
-        let a = Math.random();
+function getComputerChoice(){
+    let a = Math.random();
         
-        if(a >= 0 && a<=0.33){
-            return "rock"
-        }else if(a > 0.33 && a<=0.66){
-            return "paper";
-        }else{
-            return "scissors"
-        }
+    if(a >= 0 && a<=0.333333){
+        return "rock"
+    }else if(a > 0.3333333 && a<=0.666666){
+        return "paper";
+    }else{
+        return "scissors"
     }
-    let b;
-    function getHumanChoice(){
-        b = prompt("Enter your choice: ");
-        return b;
-    }
-    
+}
+let compThrows = getComputerChoice();
+// console.log(compThrows);
+let humanChoice;
+// function getHumanChoice(){
+//     humanChoice = prompt("Enter choice: ");
+//     return humanChoice.toLocaleLowerCase();
+// }
 
-    function playRound(humanChoice, compChoice){
-        if(bool){
-        if(humanChoice == "q"){
-            bool = false;
-        }
-        if(humanChoice == "rock" && compChoice== "scissors"){
-            scoreHuman +=1;
-        }else if(humanChoice=="paper" && compChoice =="rock"){
-            scoreHuman+=1;
-        }else if(humanChoice=="scissors" && compChoice=="paper"){
-            scoreHuman+=1;
-        }else{
-            scoreComp+=1;
-        }
-        console.log("computer chose: ", compChoice);
+let scoreHuman = 0, scoreComp = 0;
 
-        console.log("Score of Human: " , scoreHuman , " Score of Computer ", scoreComp)
-    }
+
+function playRound(humanChoice,compChoice){
+
+    if(humanChoice === compChoice){
+        return;
     }
 
-    const humanChoice = getHumanChoice();
-    const compChoice = compThrows();
+    else if(humanChoice === "rock" && compChoice=== "scissors"){
+        scoreHuman +=1;
+        console.log("Human Wins");
+        contentWinner.textContent = "Human";
+        
+    }else if(humanChoice==="paper" && compChoice ==="rock"){
+        scoreHuman+=1;
+        console.log("Human Wins");
+        contentWinner.textContent = "Human";
+    }else if(humanChoice==="scissors" && compChoice==="paper"){
+        scoreHuman+=1;
+        console.log("Human Wins");
+        contentWinner.textContent = "Human";
+    }else{
+        scoreComp+=1;
+        console.log("Computer Wins");
+        contentWinner.textContent = "Computer";
+    }
+    console.log("computer chose: ", compChoice);
 
-    playRound(humanChoice,compChoice);
-    
+    console.log("Score of Human: " , scoreHuman , " Score of Computer ", scoreComp)
+    console.log("==========");
+    contentH.textContent = scoreHuman;
+    contentC.textContent = scoreComp;
+
+    hsc.appendChild(h);
+    hsc.appendChild(contentH);
+    csc.appendChild(c);
+    csc.appendChild(contentC);
+    dw.appendChild(displayWinner);
+    dw.appendChild(contentWinner);
 
 }
+
+function handleClick(humanChoice) {
+    return function() {
+        let compChoice = getComputerChoice();
+        playRound(humanChoice, compChoice);
+    }
+}
+
+// humanChoice = getHumanChoice();
+// compChoice = getComputerChoice();
+
+let rock = document.querySelector("#rock");
+rock.addEventListener("click",handleClick("rock"));
+
+let scissor = document.querySelector("#scissor");
+scissor.addEventListener("click",handleClick("scissors"));
+
+let paper = document.querySelector("#paper");
+paper.addEventListener("click",handleClick("paper"));
+
+// playRound(humanChoice,compChoice);
+
+//     let b;
+//     function getHumanChoice(){
+//         b = prompt("Enter your choice: ");
+//         return b;
+//     }
+    
+
+//     function playRound(humanChoice, compChoice){
+//         if(bool){
+//         if(humanChoice == "q"){
+//             bool = false;
+//         }
+        // if(humanChoice == "rock" && compChoice== "scissors"){
+        //     scoreHuman +=1;
+        // }else if(humanChoice=="paper" && compChoice =="rock"){
+        //     scoreHuman+=1;
+        // }else if(humanChoice=="scissors" && compChoice=="paper"){
+        //     scoreHuman+=1;
+        // }else{
+        //     scoreComp+=1;
+        // }
+        // console.log("computer chose: ", compChoice);
+
+        // console.log("Score of Human: " , scoreHuman , " Score of Computer ", scoreComp)
+//     }
+//     }
+
+//     const humanChoice = getHumanChoice();
+//     const compChoice = compThrows();
+
+//     playRound(humanChoice,compChoice);
+    
+
+// }
