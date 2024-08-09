@@ -38,9 +38,11 @@
 }
 
 #container{
-    width: 140px;
-    height: 140px;
-    /* background-color:darkturquoise; */
+    /* background-color: rgb(14, 36, 29); */
+    /* width: 160px;
+    height: 160px; */
+    /* background-color:rgb(1, 255, 255); */
+    color: rgb(22, 7, 7);
     font-style: monospace;
     display: flex;
 
@@ -48,5 +50,12 @@
 }
 #score{
     display: flex;
+    margin: 20px;
     flex-direction: column;
+}
+.chose{
+    
+}
+.choseHum{
+
 }
