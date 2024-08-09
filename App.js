@@ -2,6 +2,7 @@ let hsc = document.querySelector("#hsc");
 let csc = document.querySelector("#csc");
 let dw = document.querySelector("#dw");
 // #container
+//comment
 let h = document.createTextNode("Human Score: ");
 const c = document.createTextNode("Computer Score: ");
 let displayWinner = document.createTextNode("Winner is: ");
