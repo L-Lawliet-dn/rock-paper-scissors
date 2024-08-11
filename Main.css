@@ -1,4 +1,11 @@
- 
+ body{
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* height: vh; */
+    /* overflow:visible; */
+    /* height: 100px; */
+ }
 #btn{
 
     display: flex;
@@ -7,28 +14,44 @@
     
 }
 #rock{
-    margin: 30px;
-    font-size: 30px;
+
+    background-image: url(960x0.jpg.webp);
+    /* image-resolution:10%; */
+    background-size:cover;
+    margin: 10px;
+    font-size: 15px;
     border: solid green 1px;
     border-radius: 17px;
-    color:rgb(80, 65, 65);
-    background-color: aquamarine;
+    color:rgb(255, 255, 255);
     padding-left: 20px;
     padding-right: 20px;
+    height: 10vw;
+    width: 33vw;
+    padding-top: 200px;
+   
 }
 #scissor{
-    margin: 30px;
-    font-size: 30px;
+    background-image: url(scissor.jpeg);
+    background-size:cover;
+    height: 15vw;
+    width: 76vw;
+    margin: 10px;
+    font-size: 15px;
     border: solid green 1px;
     border-radius: 20px;
     color:rgb(80, 65, 65);
     background-color: aquamarine;
+    padding-top: 120px;
     padding-left: 20px;
     padding-right: 20px;
 }
 #paper{
-    margin: 30px;
-    font-size: 30px;
+    background-image: url(paper.jpeg);
+    background-size:cover;
+    height: 15vw;
+    width: 25vw;
+    margin: 10px;
+    font-size: 15px;
     border: solid green 1px;
     border-radius: 20px;
     color:rgb(80, 65, 65);
@@ -45,17 +68,16 @@
     color: rgb(22, 7, 7);
     font-style: monospace;
     display: flex;
-
     font-style: monospace;
 }
 #score{
-    display: flex;
+    /* display: flex; */
     margin: 20px;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
-.chose{
+/* .chose{
     
 }
 .choseHum{
 
-}
+} */

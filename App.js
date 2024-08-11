@@ -114,8 +114,6 @@ function playRound(humanChoice,compChoice){
     dw.appendChild(chose);
     dw.appendChild(displayWinner);
     dw.appendChild(contentWinner);
-    
-    
 
 }
 
